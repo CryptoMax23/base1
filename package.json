@@ -15,7 +15,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "wrangler publish"
+    "deploy": "npx wrangler deploy"
   },
   "dependencies": {
     "@cloudflare/d1": "^1.4.1",

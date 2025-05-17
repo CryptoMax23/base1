@@ -27,9 +27,7 @@ bindings = [
 ]
 
 [build]
-  command = "NEXT_PUBLIC_URL=https://astagereborn.com npm install -g pnpm && pnpm install && pnpm run build"
-
-[deploy]
+  command = "set NEXT_PUBLIC_URL=https://astagereborn.com && npm install -g pnpm && pnpm install && pnpm run build"
 
 [observability.logs]
 enabled = true

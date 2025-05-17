@@ -28,7 +28,6 @@ interface FcContext {
 
 export default function Notices() {
   const [isVisible, setIsVisible] = useState<boolean>(true);
-  const [noticeContent, setNoticeContent] = useState<NoticeContent | null>(null);
   const [fcContext, setFcContext] = useState<FcContext | null>(null);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -50,18 +49,20 @@ export default function Notices() {
     })();
   }, []);
 
-  useEffect(() => {
-    const fetchNotice = async () => {
-      try {
-        const res = await fetch('/api/get-notice');
-        const data: NoticeContent = await res.json();
-        setNoticeContent(data);
-      } catch (error) {
-        console.error('Error fetching notice:', error);
-      }
-    };
-    fetchNotice();
-  }, []);
+  // Static Notice Content
+  const noticeContent: NoticeContent = {
+    title: "⚠️ Before You Explore",
+    warning: "A Creative District is an ongoing endeavor!",
+    message: "Keep an eye out for information about upcoming summer events including Tabor Days, and when the new ownership of the Broken Spoke is ready we'd love to integrate your menu right here on the map too!",
+    contacts: [
+      { label: 'steve@astagereborn.com', url: 'mailto:steve@astagereborn.com' },
+      { label: 'Facebook (Page + Messenger)', url: 'https://facebook.com/astagereborn' },
+      { label: 'Farcaster (@Pederzani.ETH)', url: 'https://warpcast.com/pederzani.eth' },
+      { label: 'Discord (@Pederzani.ETH)', url: 'https://discord.gg/astagereborn' },
+      { label: 'X (@AStageReborn)', url: 'https://x.com/astagereborn' },
+    ],
+    footer: "This is just the beginning. I look forward to building this free community driven utility for interactive public activities and information to serve Minatare, the developing Creative District, and beyond!\n- Steve",
+  };
 
   const handleLinkClick = (url: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
     const isFarLink = /^https?:\/\//i.test(url);
