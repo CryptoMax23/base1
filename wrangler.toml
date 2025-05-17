@@ -22,7 +22,8 @@ bindings = [
 name = "asr-prod"
 bindings = [
   { name = "DATA", type = "d1_database", db = "astagereborn" },
-  { name = "AUTH", type = "d1_database", db = "auth" }
+  { name = "AUTH", type = "d1_database", db = "auth" },
+  { name = "NEXT_PUBLIC_URL", type = "plain_text", value = "https://astagereborn.com" }
 ]
 
 [build]
