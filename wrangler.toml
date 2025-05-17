@@ -33,3 +33,6 @@ bindings = [
 
 [observability.logs]
 enabled = true
+
+[assets]
+directory = "./.next"
