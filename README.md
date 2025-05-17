@@ -8,9 +8,7 @@
 
 ## What is This Mini-App?
 
-This **Progressive Web App (PWA)** and **mini-app** (e.g., Farcaster client) allows cities to create virtual districts where the public can interact in a way that's both informative and engaging. It’s designed to promote creative district outreach, facilitate survey data collection for **Creative District Certification**, and encourage participation from the community.
-
-Our first city partner is **Minatare, Nebraska**, where we are helping establish and administer a Creative District to revitalize their downtown, attract new residents, and foster economic development through the arts.
+This **Progressive Web App (PWA)** and **mini-app** (e.g., browsers or Farcaster client) allows cities to create virtual districts where the public can interact in a way that's both informative and engaging. It’s designed to promote creative district outreach, facilitate survey data collection for **Creative District Certification**, and encourage participation from the community. Our first city partner is **Minatare, Nebraska**, where we are helping establish and administer a Creative District to revitalize their downtown, attract new residents, and foster economic development through the arts.
 
 ### Features:
 

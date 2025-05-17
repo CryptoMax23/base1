@@ -1,8 +1,6 @@
 import type { ReactNode } from 'react'
 import { Context } from './settings/config'
-import ServiceWorker from './settings/worker'
 import { siteMeta, frameConfig } from '@/lib/site'
-import structuredData from '../public/structured-data.json'
 import '@coinbase/onchainkit/styles.css'
 import '@/styles/globals.css'
 import '@/styles/theme.css'
@@ -24,13 +22,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <meta name="fc:frame" content={JSON.stringify(frameConfig)} />
         <link rel="webmanifest" href="/manifest" />
         <link rel="apple-touch-icon" href={siteMeta.appleIcon} sizes="180x180" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
       </head>
       <body className="bg-background">
-        <ServiceWorker />
         <Context>{children}</Context>
       </body>
     </html>

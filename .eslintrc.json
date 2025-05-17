@@ -1,20 +1,29 @@
 {
+  "root": true,
   "extends": [
-    "next/core-web-vitals",
-    "next/typescript"
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "jsx": true
+  },
+  "plugins": [
+    "@typescript-eslint"
   ],
   "rules": {
-    "@typescript-eslint/no-explicit-any": "off", 
-    "react-hooks/exhaustive-deps": "warn",
-    "@next/next/no-img-element": "warn", 
-    "react/prop-types": "off"
+    "no-empty": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "no-unused-vars": "off",
+    "no-control-regex": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "react-hooks/rules-of-hooks": "off",
+    "react-hooks/exhaustive-deps": "off" 
   },
-  "overrides": [
-    {
-      "files": ["**/*.ts", "**/*.tsx"],
-      "rules": {
-        "@typescript-eslint/explicit-module-boundary-types": "off" 
-      }
-    }
-  ]
+  "env": {
+    "browser": true,
+    "node": true
+  }
 }

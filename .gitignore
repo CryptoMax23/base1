@@ -1,32 +1,34 @@
-# --- Node Modules and Package Manager ---
+# Node Modules
 /node_modules/
 jspm_packages/
 bower_components/
 
-# --- Next.js ---
+# Next.js
 /.next/
+_next/
 out/
 
-# --- Production Builds ---
+# Production Builds
 /build/
 dist/
 
-# --- Cloudflare Pages and Tunnels ---
+# Cloudflare Pages and Tunnels
 /.cloudflared/
+.wrangler/
 
-# --- Testing and Coverage ---
+# Testing and Coverage
 /coverage/
 *.lcov
 .nyc_output
 .grunt/
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
-# --- Environment Variables ---
+# Environment Variables
 .env
 .env.local
 .env.*.local
 
-# --- Logs ---
+# Logs
 logs/
 *.log
 npm-debug.log*
@@ -35,13 +37,13 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
-# --- VSCode and Editor Settings ---
+# VSCode and Editor Settings
 .vscode/
 .vscode-test/
 .DS_Store
 *.pem
 
-# --- Build Caches for Various Tools ---
+# Build Caches for Various Tools
 .cache/
 .parcel-cache/
 .temp/
@@ -49,7 +51,7 @@ lerna-debug.log*
 **/.vitepress/dist
 **/.vitepress/cache
 
-# --- Yarn ---
+# Yarn
 .yarn/cache/
 .yarn/unplugged/
 .yarn/build-state.yml
@@ -58,17 +60,17 @@ lerna-debug.log*
 .pnp.js
 .yarn-integrity
 
-# --- TypeScript ---
+# TypeScript
 *.tsbuildinfo
 next-env.d.ts
 
-# --- Microbundle Caches ---
+# Microbundle Caches
 .rpt2_cache/
 .rts2_cache_cjs/
 .rts2_cache_es/
 .rts2_cache_umd/
 
-# --- Misc Build Caches ---
+# Misc Build Caches
 lib-cov/
 .web_modules/
 .docusaurus/
@@ -77,17 +79,19 @@ lib-cov/
 .dynamodb/
 .tern-port
 
-# --- Debugging and Runtime ---
+# Debugging and Runtime
 pids/
 *.pid
 *.seed
 *.pid.lock
 .node_repl_history
 
-# --- Misc ---
+# Misc
 SCRATCH
-wrangler.toml
-.wrangler/
 test/
 *.sql
 *.tgz
+
+# Cloudflare Workers
+workers/
+wrangler.toml

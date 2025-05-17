@@ -2,28 +2,34 @@
   "compilerOptions": {
     "baseUrl": ".",
     "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "types": ["next", "node"],
+    "allowImportingTsExtensions": true,
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
-    "typeRoots": ["node_modules/@types", "./types"],
-    "allowJs": false,
+    "typeRoots": [
+      "node_modules/@types",
+      "./types"
+    ],
+    "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": false,
     "exactOptionalPropertyTypes": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "useUnknownInCatchVariables": true,
     "incremental": true,
+    "jsx": "preserve",
     "paths": {
       "@/*": [
         "./*"
@@ -33,8 +39,7 @@
       {
         "name": "next"
       }
-    ],
-    "jsx": "preserve"
+    ]
   },
   "include": [
     "app/**/*",

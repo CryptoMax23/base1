@@ -1,5 +1,4 @@
 'use client'
-
 import { useEffect, useState } from 'react'
 import Render from './components/map'
 import Windows from './components/windows'
@@ -7,7 +6,6 @@ import Overlay from './components/overlay'
 import Notices from './components/notices'
 import { useMiniKit } from '@coinbase/onchainkit/minikit'
 import { sdk } from '@farcaster/frame-sdk'
-
 export default function App() {
   const [mounted, setMounted] = useState(false)
   const { setFrameReady, isFrameReady } = useMiniKit()

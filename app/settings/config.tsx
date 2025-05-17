@@ -7,7 +7,7 @@ import { OnchainKitProvider } from '@coinbase/onchainkit';
 import { MiniKitProvider } from '@coinbase/onchainkit/minikit';
 import { farcasterFrame } from '@farcaster/frame-wagmi-connector';
 import { coinbaseWallet, injected } from 'wagmi/connectors';
-import sdk from '@farcaster/frame-sdk';
+import { sdk } from '@farcaster/frame-sdk';
 import {
   base, mainnet, optimism, arbitrum, polygon,
   gnosis, zora, unichain, degen, monadTestnet

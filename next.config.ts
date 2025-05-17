@@ -19,15 +19,15 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: "/(.*)",  // Apply to all pages
+        source: "/(.*)",
         headers: [
           {
             key: "Cross-Origin-Opener-Policy",
-            value: "unsafe-none", // This allows the Coinbase Wallet SDK to function correctly
+            value: "unsafe-none",
           },
           {
             key: "Cross-Origin-Embedder-Policy",
-            value: "unsafe-none", // Ensure no cross-origin embedding issues
+            value: "unsafe-none", 
           },
         ],
       },
