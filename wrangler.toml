@@ -27,7 +27,7 @@ bindings = [
 ]
 
 [build]
-  command = "npm install -g pnpm && pnpm install && pnpm run build"
+  command = "NEXT_PUBLIC_URL=https://astagereborn.com npm install -g pnpm && pnpm install && pnpm run build"
 
 [deploy]
 
