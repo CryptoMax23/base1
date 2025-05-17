@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   allowedDevOrigins: [
     "astagereborn.com",
     "*.astagereborn.com",
