@@ -1,0 +1,85 @@
+:root {
+  --dpi: 460;
+  --aspect-landscape: 16 / 9;
+  --aspect-portrait: 1320 / 2868;
+  --min-width: 1320px;
+  --min-height: 2868px;
+  --max-width: 2868px;
+  --max-height: 2868px;
+  --viewport-width: 100vw;
+  --viewport-height: 100vh;
+  --touch-action: manipulation;
+  --tap-highlight: transparent;
+  --user-select: none;
+  --user-drag: none;
+  --context-menu: none;
+  --overscroll: none;
+  --scrollbar-width: 0px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+* {
+  touch-action: manipulation;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  max-width: var(--max-width);
+  max-height: var(--max-height);
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family);
+  -webkit-user-select: var(--user-select);
+  user-select: var(--user-select);
+  -webkit-touch-callout: var(--context-menu);
+  -webkit-tap-highlight-color: var(--tap-highlight);
+  touch-action: var(--touch-action);
+  -ms-overflow-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.testButton {
+  z-index: 9999;
+}
+
+.themeBtn {
+  font-size: 1.5rem;
+  position: fixed;
+  right: 4rem;
+  top: 0.8rem;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.themeBtn:hover {
+  transform: scale(1.25);
+}
+
+.slate {
+  pointer-events: none;
+  touch-action: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

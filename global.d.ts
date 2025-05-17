@@ -1,0 +1,1 @@
+declare var DATA: D1Database;

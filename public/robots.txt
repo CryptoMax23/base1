@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Crawl-delay: 360
+
+Disallow: /images/
+Disallow: /css/
+Disallow: /js/
+
+Sitemap: https://astagereborn.com/sitemap.xml

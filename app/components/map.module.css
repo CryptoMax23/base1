@@ -1,0 +1,288 @@
+.title {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 0.5rem 1rem 1rem 0.5rem;
+  font: 16px/1;
+  opacity: 0.42;
+}
+
+.title h1 {
+  margin: 0;
+  font-weight: 300;
+}
+
+.title small {
+    font-weight: 300;
+}
+
+.aboutCard {
+  padding-top: 1rem;
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.panel-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+  justify-content: space-between;
+}
+
+.panel-actions button,
+.panel-actions a {
+  flex: 1 1 calc(50% - 6px);
+  text-align: center;
+  background-color: rgba(1, 15, 50, 0.9);
+  border: 1px solid #001F3F;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.panel-actions button:hover,
+.panel-actions a:hover {
+  background: white;
+  color: #0052FF;
+}
+
+
+.aboutBtn {
+  font-size: 1.4rem;
+  position: fixed;
+  right: 1rem;
+  top: 0.8rem;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.aboutBtn:hover {
+  transform: scale(1.25);
+}
+
+.mapContainer {
+  position: fixed;
+  inset: 0;
+  width: var(--viewport-width);
+  height: var(--viewport-height);
+  touch-action: none;
+  will-change: transform;
+}
+
+.disclaimer {
+  position: fixed;
+  bottom: calc(env(safe-area-inset-bottom, 0) * 1.5);
+  padding: 1rem;
+  max-width: 100%;
+  font: clamp(.75rem, 2vw, 1rem)/1;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.card {
+  position: absolute;
+  bottom: calc(env(safe-area-inset-bottom, 0));
+  left: 50%;
+  transform: translate(-50%, 100%);
+  width: clamp(calc(100vw - 38px), calc(100vw - 1rem), 1284px);
+  height: var(--card-height, 64vh);
+  max-height: 90vh;
+  aspect-ratio: 9 / 19.5;
+  background: var(--app-card-bg);
+  border: 1px solid var(--app-card-border);
+  border-radius: 1rem 1rem 0 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  padding: 3rem 2rem 0 2rem;
+  overflow: auto;
+  word-wrap: break-word;
+  transition: transform 0.4s ease, height 0.4s ease;
+  will-change: transform, height;
+  z-index: 9000;
+}
+.card.enter { transform: translate(-50%, 0); }
+.card.exit { transform: translate(-50%, 100%) !important; }
+.card.dragging { transition: none !important; }
+
+@media (min-width: 840px) {
+  .card {
+    left: auto;
+    right: 38px;
+    transform: translateY(100%);
+    width: clamp(460px, 19.5vw, 1284px);
+    max-height: 90vh;
+    aspect-ratio: 19.5 / 9;
+    word-wrap: break-word;
+  }
+  .card.enter { transform: translateY(0); }
+  .card.exit { transform: translateY(100%) !important; }
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42%;
+  height: 6px;
+  background: var(--app-foreground);
+  border-radius: 2px;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 1;
+  word-wrap: break-word;
+}
+
+.card pre {
+  margin: 0;
+  width: 100%;
+  font: 1rem/1.4 Menlo, Consolas, monospace;
+  white-space: pre-wrap;  
+  word-break: break-word;
+  max-height: 100%;
+  overflow: auto;
+  touch-action: pan-y;
+  pointer-events: auto;
+}
+
+.infoBtn {
+  position: absolute;
+  top: 0.8rem;
+  left: 1.5rem;
+  z-index: 1;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--app-foreground);
+  cursor: pointer;
+  opacity: 0.1;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 0.8rem;
+  right: 1.5rem;
+  z-index: 1;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--app-foreground);
+  cursor: pointer;
+  opacity: 0.1;
+}
+
+.slate {
+  width: 100%;
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin: 0 auto;
+  word-wrap: break-word;
+  display: block;
+}
+
+.embed {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 2%, black 5%);
+  mask-image: linear-gradient(to bottom, transparent 2%, black 5%);
+  word-wrap: break-word;
+}
+
+.embedBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  overflow-y: auto;
+  touch-action: pan-y;
+  padding: 1.25rem;
+  -webkit-mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
+  mask-image: linear-gradient(to top, bottom 95%, transparent 100%);
+  word-wrap: break-word;
+}
+
+.buttons {
+  width: auto;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+  padding-bottom: calc(env(safe-area-inset-bottom, 0) + 1rem);
+  gap: 1.64rem;
+  display: flex;
+}
+
+.btn {
+  flex: 1;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  color: var(--app-background);
+  background: var(--app-foreground);
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: .9rem;
+  opacity: .5;
+  transition: opacity 0.3s ease;
+}
+.btn:hover { opacity: 0.9; }
+
+
+
+.card .jsonDisplay {
+  width: 100%;
+  max-height: calc(100% - 100px);
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.card .jsonDisplay table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.card .jsonDisplay td,
+.card .jsonDisplay th {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  font-size: 0.9rem;
+  vertical-align: top;
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+}
+
+.card .jsonDisplay .jsonObject,
+.card .jsonDisplay .jsonArray {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  word-wrap: break-word;
+  padding: 5px;
+}
+
+.card .jsonDisplay pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 0.8rem;
+  overflow-wrap: break-word;
+  padding: 8px;
+}
