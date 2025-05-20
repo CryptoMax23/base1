@@ -2,32 +2,8 @@ name = "asr"
 compatibility_date = "2025-05-17"
 compatibility_flags = ["nodejs_compat"]
 
-[[d1_databases]]
-binding = "DATA"
-database_name = "astagereborn"
-database_id = "43c66c31-5897-41ce-b28e-6c0751cd3d3e"
-
-[[d1_databases]]
-binding = "AUTH"
-database_name = "auth"
-database_id = "0ff635de-1820-48b5-b635-0ce7c9e90eae"
-
-[env.local]
-bindings = [
-  { name = "DATA", type = "d1_database", db = "astagereborn" },
-  { name = "AUTH", type = "d1_database", db = "auth" }
-]
-
-[env.production]
-name = "asr-prod"
-bindings = [
-  { name = "DATA", type = "d1_database", db = "astagereborn" },
-  { name = "AUTH", type = "d1_database", db = "auth" },
-  { name = "NEXT_PUBLIC_URL", type = "plain_text", value = "https://astagereborn.com" }
-]
-
 [build]
-  command = "set NEXT_PUBLIC_URL=https://astagereborn.com && npm install -g pnpm && pnpm install && pnpm run build"
+  command = "pnpm install && pnpm run build"
 
 [observability.logs]
 enabled = true
