@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server'
 import Bottleneck from 'bottleneck'
+
 export const runtime = 'edge'
+
 const API = 'https://api.exchange.coinbase.com'
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 const limiter = new Bottleneck({

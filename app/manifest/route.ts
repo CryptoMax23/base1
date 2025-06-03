@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import type { MetadataRoute } from 'next'
-import { siteMeta } from '@/lib/site'
+import { siteMeta } from '../../lib/site'
 export const runtime = 'edge'
 export function GET() {
   const origin =
