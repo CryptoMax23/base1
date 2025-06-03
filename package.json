@@ -5,17 +5,16 @@
   "description": "A Stage Reborn™ Mini-App",
   "license": "CC-BY-SA-4.0",
   "type": "module",
+  "packageManager": "npm@11.4.1",
   "engines": {
-    "node": ">=23",
-    "pnpm": ">=9"
+    "node": ">=22.16.0"
   },
-  "packageManager": "pnpm@9.10.0",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "npx wrangler deploy"
+    "push": "git add . && git commit -m \".\" && git push"
   },
   "dependencies": {
     "@cloudflare/d1": "^1.4.1",
@@ -65,39 +64,23 @@
     "workbox-window": "^7.3.0"
   },
   "devDependencies": {
+    "@types/react": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.2",
+    "tailwindcss": "^4.1.7",
+    "typescript": "^5",
+
     "@cloudflare/next-on-pages": "^1.13.12",
     "@cloudflare/workers-types": "^4.20250517.0",
     "@types/next": "^9.0.0",
     "@types/node": "^22.15.18",
-    "@types/react": "^18.2.0",
     "@typescript-eslint/eslint-plugin": "^8.32.1",
     "@typescript-eslint/parser": "^8.32.1",
     "concurrently": "^9.1.2",
-    "eslint": "^9.27.0",
-    "eslint-config-next": "^13.5.2",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "miniflare": "^4.20250508.2",
     "pino-pretty": "^13.0.0",
-    "postcss": "^8.5.3",
-    "tailwindcss": "^4.1.7",
-    "typescript": "^5.8.3",
-    "wrangler": "^4.15.2"
-  },
-  "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "react",
-        "react-dom"
-      ]
-    },
-    "neverBuiltDependencies": [
-      "bufferutil",
-      "keccak",
-      "sharp",
-      "unrs-resolver",
-      "utf-8-validate",
-      "vue-demi"
-    ]
+    "postcss": "^8.5.3"
   }
 }

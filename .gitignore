@@ -91,3 +91,20 @@ pnpm-lock.yaml
 test/
 *.sql
 *.tgz
+
+# Backup List
+/.next/
+/.pnp
+/build
+/coverage
+/node_modules
+/out/
+/test
+.DS_Store
+.env*
+.pnp.js
+.vercel
+*.pem
+*.tsbuildinfo
+next-env.d.ts
+npm-debug.log*

@@ -1,57 +1,37 @@
 {
   "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true,
     "baseUrl": ".",
-    "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "types": ["next", "node"],
-    "allowImportingTsExtensions": true,
+    "esModuleInterop": true,
+    "incremental": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
-    "typeRoots": [
-      "node_modules/@types",
-      "./types"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "noEmit": true,
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "verbatimModuleSyntax": false,
-    "exactOptionalPropertyTypes": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "useUnknownInCatchVariables": true,
-    "incremental": true,
-    "jsx": "preserve",
-    "paths": {
-      "@/*": [
-        "./*"
-      ]
-    },
     "plugins": [
       {
         "name": "next"
       }
-    ]
+    ],
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "esnext"
   },
   "include": [
-    "app/**/*",
-    "types",
+    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "next-env.d.ts",
-    ".next/types/**/*.ts",
-    "env.d.ts"
+    ".next/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules",
-    ".next"
+    "node_modules"
   ]
 }
