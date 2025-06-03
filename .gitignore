@@ -1,110 +1,38 @@
-# Node Modules
+# Node
 /node_modules/
-jspm_packages/
-bower_components/
+.pnpm/
+.pnp.*
+npm-debug.log*
+yarn-debug.log*
+*.log
 
 # Next.js
-/.next/
-_next/
+.next/
+.output/
 out/
-
-# Production Builds
-/build/
 dist/
+build/
+.next/
+.next/cache/
+next-env.d.ts
+*.tsbuildinfo
 
-# Cloudflare Pages and Tunnels
-/.cloudflared/
-.wrangler/
-
-# Testing and Coverage
-/coverage/
-*.lcov
-.nyc_output
-.grunt/
-report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
-
-# Environment Variables
+# Environment
 .env
 .env.local
 .env.*.local
 
-# Logs
-logs/
-*.log
-npm-debug.log*
-pnpm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
+# Cloudflare
+.wrangler/
+.cloudflared/
 
-# VSCode and Editor Settings
+# Editor / OS
 .vscode/
-.vscode-test/
 .DS_Store
 *.pem
 
-# Build Caches for Various Tools
+# Testing / Misc
+coverage/
+*.lcov
 .cache/
-.parcel-cache/
-.temp/
-.vuepress/dist/
-**/.vitepress/dist
-**/.vitepress/cache
-
-# Yarn
-.yarn/cache/
-.yarn/unplugged/
-.yarn/build-state.yml
-.yarn/install-state.gz
-.pnp.*
-.pnp.js
-.yarn-integrity
-
-# TypeScript
-*.tsbuildinfo
-next-env.d.ts
-
-# Microbundle Caches
-.rpt2_cache/
-.rts2_cache_cjs/
-.rts2_cache_es/
-.rts2_cache_umd/
-
-# Misc Build Caches
-lib-cov/
-.web_modules/
-.docusaurus/
-.serverless/
-.fusebox/
-.dynamodb/
-.tern-port
-
-# Debugging and Runtime
-pids/
-*.pid
-*.seed
-*.pid.lock
-.node_repl_history
-pnpm-lock.yaml
-
-# Misc
-test/
-*.sql
 *.tgz
-
-# Backup List
-/.next/
-/.pnp
-/build
-/coverage
-/node_modules
-/out/
-/test
-.DS_Store
-.env*
-.pnp.js
-.vercel
-*.pem
-*.tsbuildinfo
-next-env.d.ts
-npm-debug.log*

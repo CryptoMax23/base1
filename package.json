@@ -11,6 +11,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
+    "build:cf": "next-on-pages build",
     "start": "next start",
     "lint": "next lint",
     "push": "git add . && git commit -m \".\" && git push"

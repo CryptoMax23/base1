@@ -1,0 +1,10 @@
+{
+  "name": "asr",
+  "workers_dev": true,
+  "compatibility_date": "2025-06-03",
+  "plugins": [
+    {
+      "name": "@cloudflare/next-on-pages/wrangler"
+    }
+  ]
+}
