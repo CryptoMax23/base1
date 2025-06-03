@@ -1,5 +1,8 @@
 'use client';
 import { useState, useEffect } from 'react';
+
+import '../../styles/overlay.css';
+
 export default function Overlay() {
   const [isDark, setIsDark] = useState<"dark" | "light">("light");
   useEffect(() => {

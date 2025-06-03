@@ -1,9 +1,9 @@
 import type { ReactNode } from 'react'
 import { Context } from './settings/config'
-import { siteMeta, frameConfig } from '@/lib/site'
+import { siteMeta, frameConfig } from '../lib/site'
 import '@coinbase/onchainkit/styles.css'
-import '@/styles/globals.css'
-import '@/styles/theme.css'
+import '../styles/globals.css'
+import '../styles/theme.css'
 
 export const viewport = {
   width: 'device-width',

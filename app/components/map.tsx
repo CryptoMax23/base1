@@ -8,9 +8,10 @@ import { ScenegraphLayer } from '@deck.gl/mesh-layers';
 import { LightingEffect, AmbientLight, DirectionalLight } from '@deck.gl/core';
 import * as turf from '@turf/turf';
 import type { FeatureCollection, Polygon } from 'geojson';
-import styles from './map.module.css';
 import sdk from '@farcaster/frame-sdk';
 import Image from 'next/image';
+
+import '../../styles/map.css';
 
 const ambientLight = new AmbientLight({ color: [255, 255, 255], intensity: 1.5 });
 const directionalLight = new DirectionalLight({ color: [255, 255, 255], intensity: 2, direction: [-1, -1, -0.5] });
@@ -427,7 +428,7 @@ export default function Map() {
     dragged.current = false;
     const el = ref.current!;
     el.setPointerCapture(e.pointerId);
-    el.classList.add(styles['dragging']);
+    el.classList.add("dragging");
   };
 
   const onMove = (e: React.PointerEvent) => {
@@ -445,7 +446,7 @@ export default function Map() {
     const el = ref.current!
     if (!el.hasPointerCapture(e.pointerId)) return
     el.releasePointerCapture(e.pointerId)
-    el.classList.remove(styles['dragging'])
+    el.classList.remove("dragging")
     const h = parseFloat(el.style.getPropertyValue('--card-height') || '64vh')
     if (!dragged.current && h >= 20) return
     if (h < 33) {
@@ -501,9 +502,9 @@ const renderJsonDisplay = (data: any) => {
 
   if (sel?.id === '__donate') {
     return (
-      <div className={styles['embed']}>
-        <div className={styles['embedBody']}>
-          <div className={styles['aboutCard']}>
+      <div className="embed">
+        <div className="embedBody">
+          <div className="aboutCard">
             <p>Fundraising campaigns will be posted here when they happen but there are currently no special campaigns active, check back later!</p>
           </div>
         </div>
@@ -513,9 +514,9 @@ const renderJsonDisplay = (data: any) => {
 
   if (sel?.id === '__events') {
     return (
-      <div className={styles['embed']}>
-        <div className={styles['embedBody']}>
-          <div className={styles['aboutCard']}>
+      <div className="embed">
+        <div className="embedBody">
+          <div className="aboutCard">
             <p>Summer events and more are coming. Check back later when activity and event itinerary entries are finalized this season!</p>
           </div>
         </div>
@@ -525,9 +526,9 @@ const renderJsonDisplay = (data: any) => {
 
   if (sel?.id === '__feature') {
     return (
-      <div className={styles['embed']}>
-        <div className={styles['embedBody']}>
-          <div className={styles['aboutCard']}>
+      <div className="embed">
+        <div className="embedBody">
+          <div className="aboutCard">
             <p>The Broken Spoke has new ownership! Let us give them a hand and support them how we can. We hope to feature their menu soon once they get settled in!</p>
           </div>
         </div>
@@ -537,18 +538,18 @@ const renderJsonDisplay = (data: any) => {
 
   if (sel?.id === '__video') {
     return (
-      <div className={styles["embed"]}>
-        <div className={styles["embedBody"]}>
+      <div className="embed">
+        <div className="embedBody">
           <iframe
             ref={iframeRef}
-            className={styles["aboutCard"]}
+            className="aboutCard"
             title="bgv"
             src={`https://www.youtube.com/embed/O92pNqLD0tY?autoplay=0&controls=1&loop=1&showinfo=1`}
             allow="autoplay; encrypted-media"
             allowFullScreen
           />
           <p><strong>A Stage Reborn™ is building a Creative District with the City of Minatare, and you can be a part of it too!</strong> All proceeds donated through here go directly towards Minatare{"'"}s Creative District development and revitalization.</p>
-          <div className={styles["panel-actions"]}>
+          <div className="panel-actions">
             {fcContext?.user?.fid && (
               <>
                 <button
@@ -622,7 +623,7 @@ const renderJsonDisplay = (data: any) => {
           <p>Your help now will directly accelerate the infrastructure, labor effort, and programming needs beyond our starting point by giving us the resources to work better towards our goals over the coming years. Nebraska{"'"}s Creative Districts can also access over $100,000 in annual state funding for development and more, but public support like yours is what spotlights a district to these agencies and leads to stronger continual state-led backing.</p>
           <p>A Stage Reborn™ is a 501(c)(3) nonprofit founded in 2015 to make the arts more accessible. What began in the virtual over a decade ago has evolved into real-world impact, from digital theater to public art, career development, and revitalization efforts like Minatare{"'"}s Creative District.</p>
           <p>We operate as a hybrid-remote, volunteer-powered nonprofit focused on overcoming barriers and innovating in how the arts serve people and places. We take transformative action in the arts including not just production but facilitation to innovate making arts more accessible for everyone. Have ideas you want to share?</p>
-          <div className={styles["panel-actions"]}>
+          <div className="panel-actions">
             <a
               href="mailto:admin@astagereborn.com"
               onClick={fcContext?.user?.fid ? () => handleLinkClick("mailto:admin@astagereborn.com") : undefined}
@@ -656,9 +657,9 @@ const renderJsonDisplay = (data: any) => {
   const buttons = sel.properties?.buttons;
 
   return (
-    <div className={styles["embed"]}>
-      <div className={styles["embedBody"]}>
-        <div className={styles["author"]}>
+    <div className="embed">
+      <div className="embedBody">
+        <div className="author">
           {sel?.properties?.thumbnailUrl && imageStatus[sel.properties.thumbnailUrl] && (
             <Image
               src={getImageSrc(sel.properties.thumbnailUrl)}
@@ -666,27 +667,27 @@ const renderJsonDisplay = (data: any) => {
               width={500}
               height={500}
               draggable={false}
-              className={styles["slate"]}
+              className="slate"
             />
           )}
 
-          <a href={`mailto:${sel.properties.ownerEmail}`} className={styles["authorName"]}>
+          <a href={`mailto:${sel.properties.ownerEmail}`} className="authorName">
             {sel.properties.ownerName}
           </a>
         </div>
-        <div className={styles["desc"]}>{sel.properties.description}</div>
-        <div className={styles["jsonDisplay"]}>
+        <div className="desc">{sel.properties.description}</div>
+        <div className="jsonDisplay">
           {renderJsonDisplay(sel.properties)}
         </div>
       </div>
       {Array.isArray(buttons) && buttons.length > 0 && (
-        <div className={styles["buttons"]}>
+        <div className="buttons">
           {buttons.map((btn, i) => (
             <a
               key={i}
               href={btn.v}
               onClick={() => handleLinkClick(btn.v)}
-              className={styles["btn"]}
+              className="btn"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -723,8 +724,9 @@ const renderJsonDisplay = (data: any) => {
   }
   
   return (
-    <div className={styles['mapContainer']}>
-      <div className={styles['title']}>
+  <>
+    <div className="mapContainer">
+      <div className="title">
         <h1><small>City of Minatare</small></h1>
         <h1>&nbsp;CREATIVE DISTRICT (DRAFT)</h1>
       </div>
@@ -747,7 +749,7 @@ const renderJsonDisplay = (data: any) => {
       />
       <div
         ref={ref}
-        className={[styles['card'], styles[card]].join(' ')}
+        className="card"
         onClick={e => e.stopPropagation()}
         onPointerDown={onDown}
         onPointerMove={onMove}
@@ -755,14 +757,14 @@ const renderJsonDisplay = (data: any) => {
       >
         <button
           type="button"
-          className={styles['infoBtn']}
+          className="infoBtn"
           aria-label="Info"
         >
           ?
         </button>
         <button
           type="button"
-          className={styles['closeBtn']}
+          className="closeBtn"
           onPointerDown={e => e.stopPropagation()}
           onPointerUp={e => { 
             e.stopPropagation(); 
@@ -777,7 +779,7 @@ const renderJsonDisplay = (data: any) => {
       <div>
         <button
           type="button"
-          className={styles['aboutBtn']}
+          className="aboutBtn"
           onPointerDown={e => e.stopPropagation()}
           onPointerUp={e => {
             e.stopPropagation()
@@ -791,11 +793,12 @@ const renderJsonDisplay = (data: any) => {
       {disc && (
         <Image
           src={`data:image/svg+xml;utf8,${encodeURIComponent(disc)}`}
-          className={styles['disclaimer']}
+          className="disclaimer"
           alt="Disclaimer"
           width={480}
           height={64}
         />
       )}
   </div>
+  </>
 )}

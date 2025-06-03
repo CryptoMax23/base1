@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import sdk from '@farcaster/frame-sdk';
-import styles from './notices.module.css';
+import '../../styles/notices.css';
 
 interface Contact {
   label: string;
@@ -77,19 +77,19 @@ export default function Notices() {
   if (!noticeContent || !isVisible) return null;
 
   return (
-    <div ref={ref} className={styles['warningWidget']}>
+    <div ref={ref} className="warningWidget">
       <button
         type="button"
-        className={styles['closeButton']}
+        className="closeButton"
         onClick={closeWidget}
         aria-label="Close Widget"
       >
         &times;
       </button>
-      <div className={styles['warningTitle']}>
+      <div className="warningTitle">
         <strong>{noticeContent.title}</strong>
       </div>
-      <div className={styles['warningContent']}>
+      <div className="warningContent">
         <small><br />
           <strong>{noticeContent.warning}</strong><br /><br />
           {noticeContent.message}<br /><br />
