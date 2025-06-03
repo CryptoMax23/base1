@@ -749,7 +749,7 @@ const renderJsonDisplay = (data: any) => {
       />
       <div
         ref={ref}
-        className="card"
+        className={`card ${card}`}
         onClick={e => e.stopPropagation()}
         onPointerDown={onDown}
         onPointerMove={onMove}
