@@ -5,7 +5,6 @@
   "description": "A Stage Reborn™ Mini-App",
   "license": "CC-BY-SA-4.0",
   "type": "module",
-  "packageManager": "npm@11.4.1",
   "engines": {
     "node": ">=22.16.0"
   },
