@@ -9,8 +9,8 @@
     "node": ">=22.16.0"
   },
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "push": "git add . && git commit -m \".\" && git push"
